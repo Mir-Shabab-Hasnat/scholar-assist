@@ -1,4 +1,5 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,6 +9,18 @@ export default function Home() {
           ScholarAssist is now public!
         </p>
       </div>
+      <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lgtext-7xl">
+        Chat with your <span className="text-green-600">documents</span> in
+        seconds
+      </h1>
+      <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
+        Scholar Assist allows you to have conversations with any PDF document.
+        Simply upload your file and start asking questions right away.
+      </p>
+
+      <Link href="/dashboard" target="_blank">
+        Get Started
+      </Link>
     </MaxWidthWrapper>
   );
 }
