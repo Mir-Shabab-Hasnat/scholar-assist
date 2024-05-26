@@ -11,6 +11,8 @@ import { Button } from "./ui/button";
 const Dashboard = () => {
   const { data: files, isLoading } = trpc.getUserFiles.useQuery();
 
+  const { mutate: deleteFile } = trpc.deleteFile.useMutation();
+
   return (
     <main className="mx-auto max-w-7xl md:p-10">
       <div className="mt-8 flex flex-col items-start justify-between gap-4 border-b border-gray-200 pb-5 sm:flex-row sm:items-center sm:gap-0">
@@ -60,7 +62,12 @@ const Dashboard = () => {
                     mocked
                   </div>
 
-                  <Button size="sm" className="w-full" variant="destructive">
+                  <Button
+                    onClick={() => deleteFile({ id: file.id })}
+                    size="sm"
+                    className="w-full"
+                    variant="destructive"
+                  >
                     <Trash className="h-4 w-4" />
                   </Button>
                 </div>
