@@ -36,7 +36,6 @@ const UploadDropzone = () => {
         const progressInterval = startStimulatedProgress();
 
         // handle file uploading
-        await new Promise((resolve) => setTimeout(resolve, 1500));
 
         clearInterval(progressInterval);
         setUploadProgress(100);
