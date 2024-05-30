@@ -120,6 +120,13 @@ const UploadDropzone = () => {
                   />
                 </div>
               ) : null}
+
+              <input
+                {...getInputProps}
+                type="text"
+                id="dropzone-file"
+                className="hidden"
+              />
             </label>
           </div>
         </div>
