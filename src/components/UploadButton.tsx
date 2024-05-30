@@ -52,6 +52,18 @@ const UploadDropzone = () => {
           });
         }
 
+        const [fileResponse] = res;
+
+        const key = fileResponse?.key;
+
+        if (!key) {
+          return toast({
+            title: "Something went wrong",
+            description: "Please try again later",
+            variant: "destructive",
+          });
+        }
+
         clearInterval(progressInterval);
         setUploadProgress(100);
       }}
