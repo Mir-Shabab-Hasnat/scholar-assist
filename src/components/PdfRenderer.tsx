@@ -147,7 +147,11 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="ghost" aria-label="rotate 90 degrees">
+          <Button
+            onClick={() => setRotation((prev) => prev + 90)}
+            variant="ghost"
+            aria-label="rotate 90 degrees"
+          >
             <RotateCw className="h-4 w-4" />
           </Button>
         </div>
@@ -177,6 +181,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
                 width={width ? width : 1}
                 pageNumber={currPage}
                 scale={scale}
+                rotate={rotation}
               />
             </Document>
           </div>
