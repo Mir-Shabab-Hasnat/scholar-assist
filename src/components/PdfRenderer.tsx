@@ -4,6 +4,7 @@ import {
   ChevronDown,
   ChevronUp,
   Loader2,
+  RotateCw,
   Search,
   SearchCheckIcon,
 } from "lucide-react";
@@ -41,6 +42,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
   const [numPages, setNumPages] = useState<number>();
   const [currPage, setCurrPage] = useState<number>(1);
   const [scale, setScale] = useState<number>(1);
+  const [rotation, setRotation] = useState<number>(0);
 
   const CustomPageValidator = z.object({
     page: z
@@ -144,6 +146,10 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+
+          <Button variant="ghost" aria-label="rotate 90 degrees">
+            <RotateCw className="h-4 w-4" />
+          </Button>
         </div>
       </div>
 
